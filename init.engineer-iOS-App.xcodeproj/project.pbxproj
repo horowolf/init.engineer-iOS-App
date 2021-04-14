@@ -20,6 +20,7 @@
 		12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA61C8248C1B580020E606 /* ArticleViewController.swift */; };
 		4B101CD350B918650CC689D0 /* Pods_KaobeiAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378DEBDA1B935BC95C6DF376 /* Pods_KaobeiAPITests.framework */; };
 		64905508D51D6033F8657AF7 /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9069EE99467EB2067C330D4 /* Pods_KaobeiAPI.framework */; };
+		6A31673A26278833000B1271 /* DiscordReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31673926278833000B1271 /* DiscordReports.swift */; };
 		6A79BA6725D597410021F956 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A79BA6625D597410021F956 /* ReviewCell.swift */; };
 		6A79BB0525D99A080021F956 /* ArticleDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A79BB0425D99A080021F956 /* ArticleDetailView.storyboard */; };
 		6A79BB4225D9B8D10021F956 /* KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8B0062533750C0072F653 /* KaobeiAPI.framework */; };
@@ -176,6 +177,7 @@
 		378DEBDA1B935BC95C6DF376 /* Pods_KaobeiAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaobeiAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBAC1F82C85E00ADC5B2A2D /* Pods-init.engineer-iOS-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-init.engineer-iOS-App.release.xcconfig"; path = "Target Support Files/Pods-init.engineer-iOS-App/Pods-init.engineer-iOS-App.release.xcconfig"; sourceTree = "<group>"; };
 		663E963A8BEECEF2EE41233B /* Pods-KaobeiAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaobeiAPITests.release.xcconfig"; path = "Target Support Files/Pods-KaobeiAPITests/Pods-KaobeiAPITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A31673926278833000B1271 /* DiscordReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordReports.swift; sourceTree = "<group>"; };
 		6A79BA6625D597410021F956 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		6A79BB0425D99A080021F956 /* ArticleDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetailView.storyboard; sourceTree = "<group>"; };
 		6AB6C09125C73271006662F8 /* TableViewGap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewGap.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				12C8B026253375430072F653 /* KaobeiConnection.swift */,
 				85C012C8253E7E4100CEA9DF /* KaobeiRequestProtocol.swift */,
 				85A6C3C625AC918B00544802 /* KaobeiURL.swift */,
+				6A31673926278833000B1271 /* DiscordReports.swift */,
 				85C012CD253F259400CEA9DF /* request */,
 				85C012CA253E99F800CEA9DF /* response */,
 			);
@@ -892,6 +895,7 @@
 				85AB743D25B760B100F6238A /* KBGetArticleVoteNay.swift in Sources */,
 				85AB742125B7603100F6238A /* KBGetUserProfile.swift in Sources */,
 				85AB745D25B7612900F6238A /* KBArticleVoteNay.swift in Sources */,
+				6A31673A26278833000B1271 /* DiscordReports.swift in Sources */,
 				12C8B027253375430072F653 /* KaobeiConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,7 +1063,6 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 14;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
@@ -1094,7 +1097,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 14;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
@@ -1178,7 +1180,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = KaobeiWidget/Info.plist;
@@ -1211,7 +1212,6 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = KaobeiWidget/Info.plist;
@@ -1359,7 +1359,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
@@ -1389,7 +1388,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
 				INFOPLIST_FILE = "init.engineer-iOS-App/Info.plist";
