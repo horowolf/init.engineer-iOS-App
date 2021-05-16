@@ -38,7 +38,7 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate, Inde
             addView.delegate = self
             indexStackView.addArrangedSubview(addView)
         }
-        ATTRequest()
+        //ATTRequest()
     }
     
     func indexButtonViewDelegate(urlString: String){
@@ -50,12 +50,13 @@ class IndexTabController: UIViewController, SFSafariViewControllerDelegate, Inde
         }
     }
     
-    func ATTRequest() {
-        if #available(iOS 14.0, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                print("ATT status: \(status.rawValue)")
-            })
-        }
-    }
+    // String used in info.plist: 第三方函式庫可能會用到一些使用者追蹤技術，我們也會盡可能限制其使用的內容，不過能同意的話APP運作會比較順利就是了。
+//    func ATTRequest() {
+//        if #available(iOS 14.0, *) {
+//            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+//                print("ATT status: \(status.rawValue)")
+//            })
+//        }
+//    }
 }
 
