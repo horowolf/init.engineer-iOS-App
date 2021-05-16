@@ -8,7 +8,7 @@
 
 import UIKit
 import KaobeiAPI
-import GoogleMobileAds
+//import GoogleMobileAds
 import NVActivityIndicatorView
 
 class ArticleTabController: UIViewController {
@@ -16,8 +16,8 @@ class ArticleTabController: UIViewController {
     @IBOutlet weak var articleTable: UITableView!
     var articleList = [Article?]()
     var count = 1
-    var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-    var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
+    //var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+    //var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     let refreshControl = UIRefreshControl()
@@ -31,11 +31,11 @@ class ArticleTabController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell1") ?? ""
-        self.adBanner.rootViewController = self
-        self.adBanner.load(GADRequest())
+        //self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell1") ?? ""
+        //self.adBanner.rootViewController = self
+        //self.adBanner.load(GADRequest())
         
-        self.interstitial.load(GADRequest())
+        //self.interstitial.load(GADRequest())
         
         self.articleTable.allowsSelection = true
         self.articleTable.delegate = self
@@ -62,13 +62,13 @@ class ArticleTabController: UIViewController {
             switch response.result {
             case .success(let data):
                 self?.articleList.append(contentsOf: data.data)
-                self?.articleList.append(nil)
+                //self?.articleList.append(nil)
                 self?.articleTable.reloadData()
                 self?.count += 1
                 break
             case .failure(let error):
                 print(error.responseCode ?? "")
-                self?.articleList.append(nil)
+                //self?.articleList.append(nil)
                 self?.articleTable.reloadData()
                 break
             }
@@ -95,7 +95,7 @@ class ArticleTabController: UIViewController {
                 self?.articleList.removeAll()
                 self?.articleList.append(nil)
                 self?.articleList.append(contentsOf: data.data)
-                self?.articleList.append(nil)
+                //self?.articleList.append(nil)
                 self?.articleTable.reloadData()
                 self?.count = 2
                 break
@@ -134,9 +134,10 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         if let article = articleList[indexPath.section] {
             cell.makeArticle(content: article)
-        } else {
-            cell.makeAds(ads: self.adBanner)
         }
+//        else {
+//            cell.makeAds(ads: self.adBanner)
+//        }
         return cell
     }
     
@@ -169,13 +170,13 @@ extension ArticleTabController: UITableViewDelegate, UITableViewDataSource {
                         break
                     }
                     self?.articleList.append(contentsOf: data.data)
-                    self?.articleList.append(nil)
+                    //self?.articleList.append(nil)
                     self?.articleTable.reloadData()
                     self?.count += 1
                     break
                 case .failure(let error):
                     print(error.responseCode ?? "")
-                    self?.articleList.append(nil)
+                    //self?.articleList.append(nil)
                     self?.articleTable.reloadData()
                     break
                 }

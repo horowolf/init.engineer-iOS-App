@@ -9,7 +9,7 @@
 
 import UIKit
 import KaobeiAPI
-import GoogleMobileAds
+//import GoogleMobileAds
 import NVActivityIndicatorView
 
 class ReviewDetailViewController: UIViewController {

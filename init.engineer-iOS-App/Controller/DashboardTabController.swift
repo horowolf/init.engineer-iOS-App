@@ -8,14 +8,14 @@
 
 import UIKit
 import KaobeiAPI
-import GoogleMobileAds
+//import GoogleMobileAds
 import NVActivityIndicatorView
 
-class DashboardTabController: UIViewController, GADBannerViewDelegate {
+class DashboardTabController: UIViewController {
     
     @IBOutlet weak var userPostsTableView: UITableView!
-    var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-    var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
+//    var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+//    var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     var userPosts = [Post?]()
     var userToken: String?
     var reloadBlocker = false
@@ -31,10 +31,10 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell1") ?? ""
-        self.adBanner.rootViewController = self
-        self.adBanner.load(GADRequest())
-        self.interstitial.load(GADRequest())
+//        self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell1") ?? ""
+//        self.adBanner.rootViewController = self
+//        self.adBanner.load(GADRequest())
+//        self.interstitial.load(GADRequest())
         
         self.userPostsTableView.allowsSelection = true
         self.userPostsTableView.delegate = self
@@ -71,7 +71,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                 switch response.result {
                 case .success(let data):
                     self?.userPosts.append(contentsOf: data.data)
-                    self?.userPosts.append(nil)
+                    //self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()
                     self?.currentPage += 1
                     break
@@ -82,7 +82,7 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                             vc.expiredTimeoutToLogout()
                         }
                     }
-                    self?.userPosts.append(nil)
+                    //self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()
                     break
                 }
@@ -138,13 +138,13 @@ class DashboardTabController: UIViewController, GADBannerViewDelegate {
                 self?.userPosts.append(nil)
                 self?.userPosts.append(nil)
                 self?.userPosts.append(contentsOf: data.data)
-                self?.userPosts.append(nil)
+                //self?.userPosts.append(nil)
                 self?.userPostsTableView.reloadData()
                 self?.currentPage = 2
                 break
             case .failure(_):
                 print(response.response?.statusCode ?? "No status code")
-                self?.userPosts.append(nil)
+                //self?.userPosts.append(nil)
                 self?.userPostsTableView.reloadData()
                 if response.response?.statusCode == 401 {
                     if let vc = self?.tabBarController as? KaobeiTabBarController {
@@ -194,9 +194,10 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         if let post = userPosts[indexPath.section] {
             cell.makePost(content: post)
-        } else {
-            cell.makeAds(ads: self.adBanner)
         }
+//        else {
+//            cell.makeAds(ads: self.adBanner)
+//        }
         return cell
     }
     
@@ -230,7 +231,7 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
                         break
                     }
                     self?.userPosts.append(contentsOf: data.data)
-                    self?.userPosts.append(nil)
+                    //self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()
                     self?.currentPage += 1
                     break
@@ -241,7 +242,7 @@ extension DashboardTabController: UITableViewDelegate, UITableViewDataSource {
                         }
                     }
                     print(error.responseCode ?? "")
-                    self?.userPosts.append(nil)
+                    //self?.userPosts.append(nil)
                     self?.userPostsTableView.reloadData()
                     break
                 }

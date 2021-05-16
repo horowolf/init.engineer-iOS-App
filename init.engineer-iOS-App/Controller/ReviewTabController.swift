@@ -8,7 +8,7 @@
 
 import UIKit
 import KaobeiAPI
-import GoogleMobileAds
+//import GoogleMobileAds
 import NVActivityIndicatorView
 
 class ReviewTabController: UIViewController {
@@ -17,8 +17,8 @@ class ReviewTabController: UIViewController {
     @IBOutlet weak var reviewTable: UITableView!
     var reviewList = [ReviewCellData?]()
     var count = 1
-    var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-    var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
+    //var adBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
+    //var interstitial = GADInterstitial(adUnitID: K.getInfoPlistByKey("GAD AdsInterstitial") ?? "")
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     let refreshControl = UIRefreshControl()
@@ -42,11 +42,11 @@ class ReviewTabController: UIViewController {
             self.userToken = accessToken
             if self.reviewList.isEmpty == false { return }
             
-            self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell2") ?? ""
-            self.adBanner.rootViewController = self
-            self.adBanner.load(GADRequest())
-            
-            self.interstitial.load(GADRequest())
+//            self.adBanner.adUnitID = K.getInfoPlistByKey("GAD Cell2") ?? ""
+//            self.adBanner.rootViewController = self
+//            self.adBanner.load(GADRequest())
+//
+//            self.interstitial.load(GADRequest())
             
             self.reviewTable.allowsSelection = true
             self.reviewTable.delegate = self
@@ -108,9 +108,9 @@ class ReviewTabController: UIViewController {
                         loadCount += 1
                     }
                 }
-                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
-                    self?.reviewList.append(nil)
-                }
+//                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
+//                    self?.reviewList.append(nil)
+//                }
                 self?.count = 2
                 self?.reviewTable.reloadData()
                 break
@@ -151,9 +151,9 @@ class ReviewTabController: UIViewController {
                         loadCount += 1
                     }
                 }
-                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
-                    self?.reviewList.append(nil)
-                }
+//                if let listCount = self?.reviewList.count, loadCount > 0 || listCount < 2 {
+//                    self?.reviewList.append(nil)
+//                }
                 self?.reviewTable.reloadData()
                 self?.count += 1
                 break
@@ -164,7 +164,7 @@ class ReviewTabController: UIViewController {
                         vc.expiredTimeoutToLogout()
                     }
                 }
-                self?.reviewList.append(nil)
+                //self?.reviewList.append(nil)
                 self?.reviewTable.reloadData()
                 break
             }
@@ -196,9 +196,10 @@ extension ReviewTabController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         if let review = reviewList[indexPath.section] {
             cell.makeArticleInReview(content: review)
-        } else {
-            cell.makeAds(ads: self.adBanner)
         }
+//        else {
+//            cell.makeAds(ads: self.adBanner)
+//        }
         return cell
     }
     

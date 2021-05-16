@@ -18,6 +18,8 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>Discord URL</key>
+	<string>$(DISCORD_URL)</string>
 	<key>GAD AdsInterstitial</key>
 	<string>$(ADMOB_INTER)</string>
 	<key>GAD AdsInterstitial Video</key>
@@ -42,8 +44,6 @@
 	<string>$(KAOBEI_TOKEN)</string>
 	<key>Keychain Service Name</key>
 	<string>$(KEYCHAIN_SERVICE_NAME)</string>
-	<key>Discord URL</key>
-	<string>$(DISCORD_URL)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.social-networking</string>
 	<key>LSRequiresIPhoneOS</key>

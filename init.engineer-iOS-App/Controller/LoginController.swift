@@ -8,13 +8,13 @@
 
 import UIKit
 import AppAuth
-import GoogleMobileAds
+//import GoogleMobileAds
 import NVActivityIndicatorView
 
-class LoginController: UIViewController, GADBannerViewDelegate {
+class LoginController: UIViewController {
     
     private var authState: OIDAuthState?
-    var bannerView: GADBannerView!
+//    var bannerView: GADBannerView!
     
     var loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .randomPick(), color: .cyan, padding: .none)
     
@@ -41,11 +41,11 @@ class LoginController: UIViewController, GADBannerViewDelegate {
     func setupUI() {
         navigationItem.hidesBackButton = true
         // In this case, we instantiate the banner with desired ad size.
-        bannerView = GADBannerView(adSize: kGADAdSizeLargeBanner)
-        bannerView.adUnitID = K.getInfoPlistByKey("GAD Login") ?? ""
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        bannerView.load(GADRequest())
+//        bannerView = GADBannerView(adSize: kGADAdSizeLargeBanner)
+//        bannerView.adUnitID = K.getInfoPlistByKey("GAD Login") ?? ""
+//        bannerView.rootViewController = self
+//        bannerView.delegate = self
+//        bannerView.load(GADRequest())
         
         self.loadingView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.loadingView)
@@ -102,29 +102,29 @@ class LoginController: UIViewController, GADBannerViewDelegate {
     }
 }
 
-extension LoginController {
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-          [NSLayoutConstraint(item: bannerView,
-                              attribute: .bottom,
-                              relatedBy: .equal,
-                              toItem: view.safeAreaLayoutGuide,
-                              attribute: .bottom,
-                              multiplier: 1,
-                              constant: 0),
-           NSLayoutConstraint(item: bannerView,
-                              attribute: .centerX,
-                              relatedBy: .equal,
-                              toItem: view,
-                              attribute: .centerX,
-                              multiplier: 1,
-                              constant: 0)
-          ])
-       }
-    
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        addBannerViewToView(bannerView)
-    }
-}
+//extension LoginController: GADBannerViewDelegate {
+//    func addBannerViewToView(_ bannerView: GADBannerView) {
+//        bannerView.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(bannerView)
+//        view.addConstraints(
+//          [NSLayoutConstraint(item: bannerView,
+//                              attribute: .bottom,
+//                              relatedBy: .equal,
+//                              toItem: view.safeAreaLayoutGuide,
+//                              attribute: .bottom,
+//                              multiplier: 1,
+//                              constant: 0),
+//           NSLayoutConstraint(item: bannerView,
+//                              attribute: .centerX,
+//                              relatedBy: .equal,
+//                              toItem: view,
+//                              attribute: .centerX,
+//                              multiplier: 1,
+//                              constant: 0)
+//          ])
+//       }
+//
+//    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+//        addBannerViewToView(bannerView)
+//    }
+//}
