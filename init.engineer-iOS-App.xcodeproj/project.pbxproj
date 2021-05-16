@@ -20,6 +20,7 @@
 		12CA61C9248C1B580020E606 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA61C8248C1B580020E606 /* ArticleViewController.swift */; };
 		4B101CD350B918650CC689D0 /* Pods_KaobeiAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378DEBDA1B935BC95C6DF376 /* Pods_KaobeiAPITests.framework */; };
 		64905508D51D6033F8657AF7 /* Pods_KaobeiAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9069EE99467EB2067C330D4 /* Pods_KaobeiAPI.framework */; };
+		6A2E72CF26516D0400B8BD1D /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB7835095CFCC106E3E1CBB /* Pods_init_engineer_iOS_App.framework */; };
 		6A31673A26278833000B1271 /* DiscordReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31673926278833000B1271 /* DiscordReports.swift */; };
 		6A79BA6725D597410021F956 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A79BA6625D597410021F956 /* ReviewCell.swift */; };
 		6A79BB0525D99A080021F956 /* ArticleDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A79BB0425D99A080021F956 /* ArticleDetailView.storyboard */; };
@@ -92,7 +93,6 @@
 		DC502755260CC48400B3D5A4 /* KBInteractiveLinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC502754260CC48400B3D5A4 /* KBInteractiveLinkTextView.swift */; };
 		DC50276C260CCA0100B3D5A4 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC50276B260CCA0100B3D5A4 /* Utility.swift */; };
 		DCDF250525F7DB3000B9137A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A3A4E25B9897300F484F1 /* Constants.swift */; };
-		F7769AE4515EAFECA91FD255 /* Pods_init_engineer_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB7835095CFCC106E3E1CBB /* Pods_init_engineer_iOS_App.framework */; };
 		FA0ADB9BEA73C3F6ECF9124B /* Pods_KaobeiWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C52278991D6B26FFCE26B7 /* Pods_KaobeiWidgetExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -296,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12C8B01B2533750C0072F653 /* KaobeiAPI.framework in Frameworks */,
-				F7769AE4515EAFECA91FD255 /* Pods_init_engineer_iOS_App.framework in Frameworks */,
+				6A2E72CF26516D0400B8BD1D /* Pods_init_engineer_iOS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1062,10 +1062,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8HQMGH8V7;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1080,6 +1080,8 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1096,10 +1098,10 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H8HQMGH8V7;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1115,6 +1117,8 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = horo.KaobeiAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1193,7 +1197,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer.KaobeiWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Widget Development";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Kaobei Mac Widget Development";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1225,7 +1229,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer.KaobeiWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Widget Distribution";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Kaobei Mac Widget Distribution";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1371,7 +1375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer";
 				PRODUCT_NAME = "純靠北工程師";
 				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Main Development";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Kaobei Mac development";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1386,7 +1390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconSP;
 				CODE_SIGN_ENTITLEMENTS = "init.engineer-iOS-App/純靠北工程師.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = H8HQMGH8V7;
@@ -1400,7 +1404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "horo.init-engineer";
 				PRODUCT_NAME = "純靠北工程師";
 				PROVISIONING_PROFILE_SPECIFIER = "Kaobei Main Distribution";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Kaobei Mac Distribution";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
